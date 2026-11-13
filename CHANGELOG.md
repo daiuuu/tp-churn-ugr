@@ -1,3 +1,9 @@
+[Fase 6 - Despliegue]
+- Plan de mantenimiento de la solución.
+- Aplicación web en Streamlit con tres vistas: Resumen, Predecir y Modelo.
+- Código organizado en vistas/, logica/, plantillas/ y static/.
+- Publicación en Streamlit Community Cloud.
+
 [Fase 5 - Evaluación]
 - Cálculo de exactitud (0,74), precisión (0,50), recall (0,77) y F1 (0,61).
 - Matriz de confusión e interpretación de los resultados.
