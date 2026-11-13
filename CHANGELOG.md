@@ -1,3 +1,9 @@
+[Fase 4 - Modelado]
+- Selección de Churn como variable objetivo.
+- Conversión de variables categóricas a dummies.
+- División 70% entrenamiento / 30% prueba.
+- Entrenamiento de un árbol de decisión (max_depth=4, class_weight=balanced).
+
 [Fase 3 - Preparación de los datos]
 - Conversión de TotalCharges a número y eliminación de 11 filas sin dato.
 - Eliminación de la columna customerID.
