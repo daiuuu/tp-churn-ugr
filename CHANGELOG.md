@@ -1,3 +1,9 @@
+[Fase 3 - Preparación de los datos]
+- Conversión de TotalCharges a número y eliminación de 11 filas sin dato.
+- Eliminación de la columna customerID.
+- Análisis exploratorio: estadística descriptiva y 5 gráficos.
+- Dataset limpio guardado en data/clientes_limpio.csv.
+
 [Fase 2 - Comprensión de los datos]
 - Metodología de adquisición de datos y alternativa para construir el dataset.
 - Carga del dataset Telco Customer Churn (7.043 clientes, 21 columnas).
