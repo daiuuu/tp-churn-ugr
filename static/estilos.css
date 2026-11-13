@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,500;1,600&family=Inter:wght@400;500;700&display=swap');
+
+/* ================= Paleta de colores ================= */
+:root {
+  --crema: #EFEBE3;
+  --superficie: #F6F3ED;
+  --topo: #BFB3A6;
+  --topo-claro: #DDD6CB;
+  --carbon: #2E2C29;
+  --gris: #6B665E;
+  --oliva: #6E6A45;
+  --terracota: #9A5B45;
+  --serif: 'Cormorant Garamond', Georgia, serif;
+  --sans: 'Inter', Arial, sans-serif;
+}
+
+/* ================= Ajustes de Streamlit (ancho completo, sin menú propio) ================= */
+html, body, [class*="st-"], p, label { font-family: var(--sans); }
+header[data-testid="stHeader"], footer, #MainMenu { display: none; }
+.block-container, [data-testid="stMainBlockContainer"] {
+  max-width: 100% !important; padding: 0 clamp(16px, 4vw, 64px) 32px clamp(16px, 4vw, 64px) !important;
+}
+a { color: inherit !important; text-decoration: none !important; }
+svg { flex-shrink: 0; }
+
+/* ================= Encabezado y menú ================= */
+.barra { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 12px;
+         padding: 18px 0 14px 0; border-bottom: 1px solid var(--carbon); }
+.marca { font-family: var(--serif); font-style: italic; font-weight: 600; font-size: 32px; line-height: 1; }
+.menu { display: flex; gap: clamp(16px, 3vw, 40px); }
+.menu a { display: flex; align-items: center; gap: 7px; font-size: 13px; text-transform: uppercase;
+          letter-spacing: 1px; padding: 6px 0; border-bottom: 1px solid transparent; }
+.menu a:hover { color: var(--oliva) !important; }
+.menu a.activo { border-bottom-color: var(--carbon); }
+.barra-info { justify-self: end; font-size: 13px; }
+
+/* ================= Portada ================= */
+.hero { position: relative; background: var(--topo); height: clamp(230px, 26vw, 380px); margin-top: 20px; overflow: hidden; }
+.hero-palabra { position: absolute; right: -0.04em; top: -0.2em; font-family: var(--serif); font-style: italic;
+                font-size: clamp(150px, 22vw, 380px); color: var(--crema); line-height: 1; }
+.hero-texto { position: absolute; left: clamp(20px, 3vw, 48px); bottom: clamp(20px, 3vw, 40px); max-width: 460px; }
+.hero-texto h1 { font-family: var(--sans); font-size: clamp(22px, 2.4vw, 32px); font-weight: 700; text-transform: uppercase;
+                 letter-spacing: 1px; margin: 0 0 8px 0; padding: 0; color: var(--carbon); }
+.hero-texto p { margin: 0; line-height: 1.5; }
+.hero-etiqueta { position: absolute; right: clamp(20px, 3vw, 48px); bottom: clamp(20px, 3vw, 40px);
+                 background: var(--crema); padding: 10px 26px; font-size: 12px; letter-spacing: 1px; }
+
+.encabezado-pagina { padding: 34px 0 6px 0; border-bottom: 1px solid var(--carbon); }
+.encabezado-pagina .nombre-pagina { font-family: var(--serif) !important; font-style: italic; font-weight: 500; font-size: clamp(42px, 5vw, 66px);
+                        margin: 0; padding: 0; line-height: 1.1; color: var(--carbon); }
+.encabezado-pagina p { margin: 4px 0 14px 0; color: var(--gris); }
+
+/* ================= Títulos de sección ================= */
+.titulo { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; margin: 30px 0 4px 0; }
+.titulo h2 { font-family: var(--sans); font-size: 15px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;
+             margin: 0; padding: 0; color: var(--carbon); }
+.titulo span { font-size: 12px; color: var(--gris); }
+
+/* ================= Tarjetas con números ================= */
+.grilla { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--carbon); border-left: 1px solid var(--carbon); }
+.tarjeta { background: var(--superficie); padding: 20px; border-right: 1px solid var(--carbon); border-bottom: 1px solid var(--carbon); }
+.tarjeta .etiqueta { display: flex; align-items: center; gap: 8px; font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px; }
+.tarjeta .valor { font-family: var(--serif); font-style: italic; font-size: clamp(38px, 4vw, 54px); margin-top: 10px; line-height: 1.1; }
+
+/* ================= Paneles y gráficos ================= */
+.panel { border: 1px solid var(--carbon); background: var(--superficie); padding: 20px; height: 100%; }
+.panel h3 { font-family: var(--sans); font-size: 13px; font-weight: 700; margin: 0 0 16px 0; padding: 0; color: var(--carbon); }
+
+.barra-fila { display: grid; grid-template-columns: minmax(90px, 38%) 1fr 44px; align-items: center; gap: 10px;
+              margin-bottom: 10px; font-size: 13px; }
+.barra-pista { height: 22px; background: var(--topo-claro); }
+.barra-relleno { height: 100%; background: var(--topo); }
+.barra-relleno.destacada { background: var(--oliva); }
+.barra-fila .numero { text-align: right; }
+
+.histograma { display: flex; align-items: flex-end; gap: 6px; height: 230px; border-bottom: 1px solid var(--carbon); }
+.columna { flex: 1; display: flex; flex-direction: column-reverse; height: 100%; }
+.columna div:first-child { background: var(--oliva); }
+.columna div:last-child { background: var(--topo); }
+.ejes { display: flex; gap: 6px; margin-top: 6px; font-size: 11px; color: var(--gris); }
+.ejes span { flex: 1; text-align: center; }
+.eje-titulo { text-align: center; font-size: 12px; margin-top: 6px; }
+.leyenda { display: flex; gap: 20px; font-size: 13px; margin-bottom: 14px; }
+.leyenda i { display: inline-block; width: 12px; height: 12px; margin-right: 6px; vertical-align: -1px; }
+
+.matriz { display: grid; grid-template-columns: auto 1fr 1fr; gap: 4px; font-size: 12px; }
+.matriz .encabezado { padding: 6px; text-align: center; color: var(--gris); }
+.matriz .lateral { padding-right: 10px; display: flex; align-items: center; color: var(--gris); }
+.celda { padding: 18px 8px; text-align: center; }
+.celda b { display: block; font-family: var(--serif); font-style: italic; font-weight: 500; font-size: 40px; line-height: 1.2; }
+.celda.acierto { background: var(--oliva); color: var(--crema); }
+.celda.error { background: var(--topo-claro); }
+
+/* ================= Listas con líneas ================= */
+.lista { border-top: 1px solid var(--carbon); }
+.fila { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 10px 4px;
+        border-bottom: 1px solid var(--carbon); font-size: 15px; }
+.fila small { color: var(--gris); font-size: 13px; }
+.fila .dato { font-family: var(--serif); font-style: italic; font-size: 26px; white-space: nowrap; }
+
+/* ================= Formulario y resultado ================= */
+[data-testid="stForm"] { border: 1px solid var(--carbon); border-radius: 0; background: var(--superficie); padding: 20px; }
+.stFormSubmitButton button { background: var(--carbon) !important; border-radius: 0; border: none; padding: 10px 30px; }
+.stFormSubmitButton button p { color: var(--crema) !important; text-transform: uppercase; letter-spacing: 1px; font-size: 13px; }
+.stFormSubmitButton button:hover { background: var(--oliva) !important; }
+
+.resultado { min-height: 100%; }
+.resultado.vacio { display: flex; align-items: center; color: var(--gris); min-height: 300px; }
+.estado { display: flex; align-items: center; gap: 10px; font-size: 13px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; }
+.porcentaje { font-family: var(--serif); font-style: italic; font-size: clamp(64px, 7vw, 96px); line-height: 1.1; margin-top: 10px; }
+.barra-riesgo { height: 6px; background: var(--topo-claro); margin: 14px 0 18px 0; }
+.barra-riesgo div { height: 100%; }
+
+.pie { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; margin-top: 40px; padding-top: 14px;
+       border-top: 1px solid var(--carbon); font-size: 12px; color: var(--gris); }
+
+/* ================= Tablet ================= */
+@media (max-width: 900px) {
+  .grilla { grid-template-columns: repeat(2, 1fr); }
+  .barra { grid-template-columns: 1fr auto; }
+  .barra-info { display: none; }
+}
+
+/* ================= Celular ================= */
+@media (max-width: 560px) {
+  .barra { grid-template-columns: 1fr; justify-items: center; }
+  .hero-etiqueta { display: none; }
+  .ejes span:nth-child(even) { visibility: hidden; }
+}
